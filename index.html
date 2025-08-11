@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>🔮 塔羅每日一抽</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <header class="container">
+    <h1>🔮 塔羅每日一抽（22 張大牌）</h1>
+    <div class="controls">
+      <input id="question" type="text" placeholder="在這裡輸入你的問題（可留白）" />
+      <div class="control-row">
+        <label>
+          抽牌數量：
+          <select id="count">
+            <option value="1">1 張</option>
+            <option value="3" selected>3 張（過去 / 現在 / 未來）</option>
+          </select>
+        </label>
+        <label>
+          <input id="allowReversed" type="checkbox" checked />
+          允許逆位（會把牌圖旋轉 180°）
+        </label>
+        <button id="drawBtn">抽牌</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="cards" class="grid"></div>
+  </main>
+
+  <footer class="container tip">
+    小訣竅：點卡片可「翻面」查看另一個方向的牌義（正/逆位切換文字，不影響圖片朝向）。
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
