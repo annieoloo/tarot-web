@@ -97,19 +97,20 @@ function render(cards){
     // 牌義（注意：顯示文字只取 upright / reversedText，絕不直接顯示布林）
     const meaning = document.createElement("p");
     meaning.className = "card__meaning";
-    meaning.textContent = card.isReversed ? (card.reversedText || "") : (card.upright || "");
+    meaning.textContent = card.isReversed ? (card.reversed || "") : (card.upright || "");
     cardEl.appendChild(meaning);
 
     // 點擊卡片：切換顯示的牌義（僅文字切換，不旋轉圖片）
     cardEl.addEventListener("click", () => {
       const showingUpright = meaning.textContent === (card.upright || "");
-      if (showingUpright) {
-        meaning.textContent = card.reversedText || "";
-        title.innerHTML = `${card.num} ${card.name} <span class="badge">逆位</span>`;
-      } else {
-        meaning.textContent = card.upright || "";
-        title.innerHTML = `${card.num} ${card.name} <span class="badge">正位</span>`;
-      }
+if (showingUpright) {
+  meaning.textContent = card.reversed || "";
+  title.innerHTML = `${card.num} ${card.name} <span class="badge">逆位</span>`;
+} else {
+  meaning.textContent = card.upright || "";
+  title.innerHTML = `${card.num} ${card.name} <span class="badge">正位</span>`;
+}
+
     });
 
     cardsDiv.appendChild(cardEl);
